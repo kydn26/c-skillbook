@@ -1,10 +1,12 @@
 #!/bin/bash
-if [ -z "$1" ]; then
-    echo "❌ Usage: ./run.sh ruta/al/script.c"
-    exit 1
-fi
 
-SOURCE="$1"
+if [ -z "$1" ]; then
+    # Enter the source file name as a command-line argument
+    read -p "Enter the source file path name: " SOURCE
+else
+    # Use the first command-line argument as the source file
+    SOURCE="$1"
+fi
 
 if [ ! -f "$SOURCE" ]; then
     echo "❌ File not found: $SOURCE"
