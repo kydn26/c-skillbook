@@ -2,15 +2,14 @@
 #define SIZE 7
 
 int main(void) {
-    int arr[SIZE];
-    int has_good_neighbours = 0;
-    for(int i = 0; i < SIZE; i++) {
-        printf("Enter number %d: ", i + 1);
-        scanf("%d", &arr[i]);
+    int arr[SIZE] = {1, 2, 3, 4, 5, 6, 7};
+    for(int i = 0; i < SIZE / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[SIZE - i - 1];
+        arr[SIZE - i - 1] = temp;
     }
-    for(int i = SIZE - 1; i >= 0; i--) {
+    for(int i = 0; i < SIZE; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");
-    return 0;
 }
